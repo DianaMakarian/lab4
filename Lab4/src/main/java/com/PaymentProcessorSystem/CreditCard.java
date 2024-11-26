@@ -6,6 +6,8 @@ public class CreditCard implements PaymentMethod {
     private String cvv;
     private String nameOnCard;
 
+    public CreditCard() {}
+
     public CreditCard(String cardNumber, String expirationDate, String cvv, String nameOnCard) {
         this.cardNumber = cardNumber;
         this.expirationDate = expirationDate;

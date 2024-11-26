@@ -4,6 +4,8 @@ public class PayPal implements PaymentMethod {
     private String email;
     private String password;
 
+    public PayPal() {}
+
     public PayPal(String email, String password) {
         this.email = email;
         this.password = password;
