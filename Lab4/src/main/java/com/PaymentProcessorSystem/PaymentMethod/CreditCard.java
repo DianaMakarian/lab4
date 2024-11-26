@@ -1,10 +1,12 @@
-package com.PaymentProcessorSystem;
+package com.PaymentProcessorSystem.PaymentMethod;
 
 public class CreditCard implements PaymentMethod {
     private String cardNumber;
     private String expirationDate;
     private String cvv;
     private String nameOnCard;
+
+    public CreditCard() {}
 
     public CreditCard(String cardNumber, String expirationDate, String cvv, String nameOnCard) {
         this.cardNumber = cardNumber;
