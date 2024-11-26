@@ -1,4 +1,4 @@
-package com.PaymentProcessorSystem;
+package com.PaymentProcessorSystem.PaymentMethod;
 
 public class BankTransfer implements PaymentMethod {
     private String iban;
