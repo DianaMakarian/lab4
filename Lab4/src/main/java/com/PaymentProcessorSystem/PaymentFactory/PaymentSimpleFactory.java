@@ -1,6 +1,11 @@
-package com.PaymentProcessorSystem;
+package com.PaymentProcessorSystem.PaymentFactory;
 
-public class PaymentFactory {
+import com.PaymentProcessorSystem.PaymentMethod.BankTransfer;
+import com.PaymentProcessorSystem.PaymentMethod.CreditCard;
+import com.PaymentProcessorSystem.PaymentMethod.PayPal;
+import com.PaymentProcessorSystem.PaymentMethod.PaymentMethod;
+
+public class PaymentSimpleFactory {
 
     public PaymentMethod createNewPayment(String paymentMethod) {
         switch (paymentMethod) {

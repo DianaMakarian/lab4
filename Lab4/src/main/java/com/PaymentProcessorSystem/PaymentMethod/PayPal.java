@@ -1,4 +1,4 @@
-package com.PaymentProcessorSystem;
+package com.PaymentProcessorSystem.PaymentMethod;
 
 public class PayPal implements PaymentMethod {
     private String email;
