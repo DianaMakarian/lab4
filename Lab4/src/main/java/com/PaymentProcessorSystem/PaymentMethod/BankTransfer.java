@@ -13,5 +13,11 @@ public class BankTransfer implements PaymentMethod {
 
     @Override
     public void processPayment(double amount) {
+        System.out.println("Processing bank transfer payment of $" + amount);
+    }
+
+    @Override
+    public void setDetails() {
+
     }
 }
