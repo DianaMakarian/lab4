@@ -1,21 +1,25 @@
 package com.PaymentProcessorSystem.PaymentFactory;
 
-import com.PaymentProcessorSystem.PaymentMethod.BankTransfer;
-import com.PaymentProcessorSystem.PaymentMethod.CreditCard;
-import com.PaymentProcessorSystem.PaymentMethod.PayPal;
 import com.PaymentProcessorSystem.PaymentMethod.PaymentMethod;
 
+import java.util.Map;
+
 public class PaymentSimpleFactory {
+    private PaymentFactory paymentFactory;
+
     public PaymentFactory createNewPayment(String paymentMethod) {
-        switch (paymentMethod) {
-            case "CreditCard":
-                return new CreditCardFactory();
-            case "BankTransfer":
-                return new BankTransferFactory();
-            case "PayPal":
-                return new PayPalFactory();
-            default:
-                throw new IllegalArgumentException("Invalid payment method: " + paymentMethod);
-        }
+        return switch (paymentMethod) {
+            case "CreditCard" -> new CreditCardFactory();
+            case "BankTransfer" -> new BankTransferFactory();
+            case "PayPal" -> new PayPalFactory();
+            default -> throw new IllegalArgumentException("Invalid payment method: " + paymentMethod);
+        };
+    }
+
+    public void processPayment(String paymentMethod, double amount, Map<String, String> details) {
+        this.paymentFactory = createNewPayment(paymentMethod);
+        PaymentMethod payment = paymentFactory.createPayment();
+        payment.setDetails(details);
+        payment.processPayment(amount);
     }
 }
