@@ -6,7 +6,6 @@ import com.PaymentProcessorSystem.PaymentMethod.PayPal;
 import com.PaymentProcessorSystem.PaymentMethod.PaymentMethod;
 
 public class PaymentSimpleFactory {
-
     public PaymentMethod createNewPayment(String paymentMethod) {
         switch (paymentMethod) {
             case "CreditCard":

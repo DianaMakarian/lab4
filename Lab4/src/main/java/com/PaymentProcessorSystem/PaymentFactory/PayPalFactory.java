@@ -1,10 +1,11 @@
 package com.PaymentProcessorSystem.PaymentFactory;
 
+import com.PaymentProcessorSystem.PaymentMethod.PayPal;
 import com.PaymentProcessorSystem.PaymentMethod.PaymentMethod;
 
-public class PayPalFactory implements PaymentFactory {
+public class PayPalFactory extends PaymentFactory {
     @Override
     public PaymentMethod factoryMethod() {
-        return null;
+        return new PayPal();
     }
 }
