@@ -5,7 +5,7 @@ import com.PaymentProcessorSystem.PaymentMethod.PaymentMethod;
 
 public class CreditCardFactory extends PaymentFactory {
     @Override
-    public PaymentMethod factoryMethod() {
+    public PaymentMethod createPayment() {
         return new CreditCard();
     }
 }
