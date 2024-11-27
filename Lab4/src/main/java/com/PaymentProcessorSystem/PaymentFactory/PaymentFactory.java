@@ -2,8 +2,8 @@ package com.PaymentProcessorSystem.PaymentFactory;
 
 import com.PaymentProcessorSystem.PaymentMethod.PaymentMethod;
 
-public abstract class PaymentFactory {
-    public abstract PaymentMethod createPayment();
+import java.util.HashMap;
 
-    public void processPayment(double amount) {}
+public abstract class PaymentFactory {
+    public abstract PaymentMethod createPayment(double amount ,HashMap<String, String> details);
 }
