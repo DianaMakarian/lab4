@@ -6,14 +6,14 @@ import com.PaymentProcessorSystem.PaymentMethod.PayPal;
 import com.PaymentProcessorSystem.PaymentMethod.PaymentMethod;
 
 public class PaymentSimpleFactory {
-    public PaymentMethod createNewPayment(String paymentMethod) {
+    public PaymentFactory createNewPayment(String paymentMethod) {
         switch (paymentMethod) {
             case "CreditCard":
-                return new CreditCard();
+                return new CreditCardFactory();
             case "BankTransfer":
-                return new BankTransfer();
+                return new BankTransferFactory();
             case "PayPal":
-                return new PayPal();
+                return new PayPalFactory();
             default:
                 throw new IllegalArgumentException("Invalid payment method: " + paymentMethod);
         }
